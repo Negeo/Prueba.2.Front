@@ -1,0 +1,229 @@
+body{
+    background-color: rgb(211, 239, 241);
+    padding: 0%;
+    margin: 0%;
+}
+
+/* definimos grid-area principal */
+
+/* menu */
+menu{
+    grid-area: menu;
+    background-color: rgb(87, 103, 252);
+    padding: 0px;
+    margin: 0px;
+    color: white;
+
+}
+.logo{
+    background-color: rgb(120, 133, 252);
+    height: 4.759rem;
+    margin-bottom: 15%;
+}
+.logo img{
+    height: 3rem;
+}
+
+.menu p {
+    font-size: x-small;
+    padding: 0px;
+    margin: 0px;
+}
+.menu a {
+    text-decoration: none;
+    padding: 2%;
+}
+/* barra busqueda */
+nav {
+    grid-area: nav;
+    color: black;
+    background-color: rgb(120, 133, 252);
+    padding: 0px;
+    margin: 0px;
+}
+.filtros {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height:min-content;
+}
+
+.filtros div{
+    margin-bottom: 5px;
+}
+
+
+/* area principal */
+main{
+    grid-area: main;
+    background-color: rgb(211, 239, 241);
+    align-items: center;
+}
+main button{
+    background-color: rgb(87, 103, 252);
+    color: white;
+    text-decoration: none;
+}
+main button a{
+    background-color: rgb(87, 103, 252);
+    color: white;
+    text-decoration: none;
+}
+.card {
+    display: flex;
+    width: 12rem;
+    padding: 6%;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    background-color: rgb(211, 239, 241);
+}
+.img_container{
+    display: flex;
+    width: auto;
+    background-size: contain;
+}
+/* ANIMACIONES - TRANSICIONES - TRANSFORMACIONES*/
+
+.img_inicio{
+    width: 12rem;
+    left: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+.img_inicio:hover{
+    opacity: 0;
+}
+.i1{
+    background-image: url(../img/Dragon\ Ball\ GT\ 2.jpg);
+}
+.i2{
+    background-image: url(../img/Sailor\ Moon\ 2.jpg);
+}
+.i3{
+    background-image: url(../img/The\ Promised\ Neverland\ 2.jpg);
+} 
+.i4{
+    background-image: url(../img/Zelda\ \(Negra\)\ 2.jpg);
+} 
+.i5{
+    background-image: url(../img/Titanic\ \(Madera\)\ 2.jpg);
+} 
+.i6{
+    background-image: url(../img/Los\ Beatles\ \(Negras\)\ 2.jpg);
+}
+.i7{
+    background-image: url(../img/La\ Casa\ de\ Papel\ -\ 3.jpg);
+}
+.i8{
+    background-image: url(../img/Harry\ Potter\ \(Negra\)\ \(Hogwarts\)\ 2.jpg);
+}
+/* footeer */
+footer{
+    grid-area: footer;
+    background-color: rgb(88, 88, 221);
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    color: white;
+}
+footer img{
+    width: 25px;
+    color: white;
+}
+.cont_footer {
+    color: black;
+}
+
+
+/* definimos grid-area principal */
+.grid-container{
+    display: grid;
+    grid-template-columns: 15% 85%;
+}
+.grid-productos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align:center;
+}
+
+
+
+/* definimos layout de vista mobile */
+@media (max-width: 576px) {
+    .grid-container{
+        display: grid;
+        grid-template-areas:
+            "menu"
+            "nav"
+            "main"
+            "footer" ;
+        grid-template-columns: 100%;
+    }
+    .filtros {
+            flex-direction: row;
+            justify-content: space-around;
+    }
+    .grid-productos{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        justify-content: center;
+        justify-items: center;
+    }
+    .menu {
+        flex-direction: row;
+        justify-content:space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+    .logo{
+        margin-bottom: 0;
+    }
+}
+/* definimos layout de vista Escritorio*/
+@media (min-width: 576px) {
+    .grid-container{
+        height: 100vh;
+        display: grid;
+        grid-template-areas:
+            "menu nav"
+            "menu main"
+            "footer main" ;
+        grid-template-columns: 15% 85%;
+    }
+}
+
+/* Ventana Emergente*/
+
+.ventana{
+    background-color: rgb(211, 239, 241);
+    width:300px;
+    padding: 10px 20px;
+    margin: 20% auto;
+    position: relative;
+}
+  .modal{
+    background-color: rgba(0,0,0,.8);
+    position:fixed;
+    right:0;
+    bottom:0;
+    left:0;
+    opacity:0;
+    pointer-events:none;
+    transition: all 1s;
+  }
+  .Flotante:target{
+    opacity:1;
+    pointer-events:auto;
+  }
+.ventana a{
+    text-decoration: none;
+}
